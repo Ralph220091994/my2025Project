@@ -15,7 +15,9 @@ fun Team.toJsTeam(): JsTeam = JsTeam(this.id, this.points, this.name)
 fun List<Team>.toArrayJsTeams() = this.map { it.toJsTeam() }.toTypedArray()
 
 fun GameJsResult.toGameResult(): GameResult = this.map {
-    val team = TeamService.teamsStorage[it.id] ?: error("Internal error! Unknown team with id: ${it.id} was received!")
-    team.points = it.points
-    team
+    val team = TeamService.teamsStorage[it.id]
+        ?: error("Internal error! Unknown team with id: ${it.id} was received!")
+
+    team.copy(points = it.points) // Instead of modifying, return a new instance if needed
 }
+
