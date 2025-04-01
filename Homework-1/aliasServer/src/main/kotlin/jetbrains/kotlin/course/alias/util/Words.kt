@@ -1,6 +1,7 @@
 package jetbrains.kotlin.course.alias.util
 
-val words = setOf(
+object Words {
+    val words = setOf(
     "cable",
     "curve",
     "substance",
@@ -301,4 +302,9 @@ val words = setOf(
     "women",
     "stone",
     "border",
-)
+    )
+
+    fun getRandomWord(): String {
+        return words.random()
+    }
+}

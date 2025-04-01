@@ -3,7 +3,7 @@ package jetbrains.kotlin.course.alias
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = ["jetbrains.kotlin.course.alias"])
 class AliasApplication
 
 @Suppress("SpreadOperator")

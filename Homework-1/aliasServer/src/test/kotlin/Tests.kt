@@ -1,6 +1,6 @@
 import card.*
 import commonTests.team.checkNameAndIdFieldsValue
-import jetbrains.kotlin.course.alias.util.words
+import jetbrains.kotlin.course.alias.util.Words
 import models.*
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
@@ -19,7 +19,7 @@ class Test {
         private val listWithOneWord = listOf("dog")
         private val listWithSeveralWords = listOf("dog", "cat")
 
-        private val expectedCardsListSize = words.size / 4
+        private val expectedCardsListSize = Words.words.size / 4
         private const val WORD = "Word"
 
         @JvmStatic
@@ -102,7 +102,7 @@ class Test {
         val wordsInCardVariable = field.get(instance)
         assert(4 == wordsInCardVariable as Int) { "The value of the field ${wordsInCardTestVariable.name} must be 4." }
         val cardsAmount = identifierFactoryClass.invokeMethodWithoutArgs(clazz, instance, getCardsAmountJavaMethod)
-        val expectedCardsAmount = words.size / wordsInCardVariable
+        val expectedCardsAmount = Words.words.size / wordsInCardVariable
         assert(expectedCardsAmount == cardsAmount as Int) { "The value in the field cardsAmount must be calculated as: words.size / WORDS_IN_CARD" }
 
         cardServiceTestClass.checkDeclaredMethods(clazz)

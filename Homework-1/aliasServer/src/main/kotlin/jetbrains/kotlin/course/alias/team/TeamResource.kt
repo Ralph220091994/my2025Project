@@ -11,3 +11,4 @@ class TeamResource(val service: TeamService) {
     fun generateTeamsForOneRound(@RequestBody number: Int) =
         service.generateTeamsForOneRound(number).toArrayJsTeams()
 }
+

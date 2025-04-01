@@ -112,6 +112,7 @@ configure(subprojects.filter { server in it.name }) {
         implementation("org.springframework.boot:spring-boot-starter-web")
         implementation("org.jetbrains.kotlin:kotlin-reflect:1.7.10")
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.14.1")
+        implementation ("com.google.code.gson:gson:2.8.8")
     }
 
     tasks.named("processResources") {
